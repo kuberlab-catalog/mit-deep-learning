@@ -39,8 +39,7 @@ spec:
         limits:
           cpu: 1000m
           memory: 8Gi
-      volumes:
-      - notebooks
+      default_volume_mapping: true
   uix:
   - name: jupyter
     displayName: Jupyter
