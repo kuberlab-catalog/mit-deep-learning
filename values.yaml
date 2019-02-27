@@ -38,3 +38,7 @@ python_version:
     options:
     - "2"
     - "3"
+
+packages:
+- tabulate
+- tqdm
