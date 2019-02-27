@@ -11,7 +11,7 @@ spec:
       {{- end }}
       manager: "pip{{.python_version.value}}"
   tasks:
-  - name: standalone
+  - name: get-notebooks
     type: init
     resources:
     - name: worker
