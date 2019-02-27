@@ -1,0 +1,84 @@
+kind: MLApp
+metadata:
+  name: mit-deep-learning
+spec:
+  package_manager: "pip{{.python_version.value}}"
+  default_mount_path: "/notebooks"
+  packages:
+    - names:
+      {{- range $i, $value := .packages }}
+      - "{{ $value }}"
+      {{- end }}
+      manager: "pip{{.python_version.value}}"
+  tasks:
+  - name: standalone
+    type: init
+    resources:
+    - name: worker
+      replicas: 1
+      restartPolicy: Never
+      maxRestartCount: 0
+      {{- if eq .python_version.value "3" }}
+      images:
+        gpu: "kuberlab/tensorflow:gpu-36-{{.tensorflow_version.value}}-full"
+        cpu: "kuberlab/tensorflow:cpu-36-{{.tensorflow_version.value}}-full"
+      {{- end }}
+      {{- if eq .python_version.value "2" }}
+      images:
+        gpu: "kuberlab/tensorflow:gpu-27-{{.tensorflow_version.value}}-full"
+        cpu: "kuberlab/tensorflow:cpu-27-{{.tensorflow_version.value}}-full"
+      {{- end }}
+      command: rm -r ./*; git clone https://github.com/lexfridman/mit-deep-learning .
+      workdir: "$NOTEBOOKS_DIR"
+      resources:
+        accelerators:
+          gpu: 0
+        requests:
+          cpu: 100m
+          memory: 64Mi
+        limits:
+          cpu: 1000m
+          memory: 8Gi
+      volumes:
+      - notebooks
+  uix:
+  - name: jupyter
+    displayName: Jupyter
+    {{- if eq .python_version.value "3" }}
+    images:
+      gpu: "kuberlab/tensorflow:gpu-36-{{.tensorflow_version.value}}-full"
+      cpu: "kuberlab/tensorflow:cpu-36-{{.tensorflow_version.value}}-full"
+    {{- end }}
+    {{- if eq .python_version.value "2" }}
+    images:
+      gpu: "kuberlab/tensorflow:gpu-27-{{.tensorflow_version.value}}-full"
+      cpu: "kuberlab/tensorflow:cpu-27-{{.tensorflow_version.value}}-full"
+    {{- end }}
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 1Gi
+      limits:
+        cpu: 4000m
+        memory: 4Gi
+    ports:
+    - port: 8888
+      targetPort: 8888
+      protocol: TCP
+      name: http
+    default_volume_mapping: true
+  volumes:
+  - isLibDir: false
+    name: training
+    clusterStorage: {{ .storage.value }}
+  - isLibDir: false
+    name: notebooks
+    clusterStorage: {{ .storage.value }}
+  - isLibDir: true
+    name: lib
+    clusterStorage: {{ .storage.value }}
+  - isLibDir: false
+    mountPath: /notebooks
+    name: code
+    subPath: code
+    clusterStorage: {{ .storage.value }}

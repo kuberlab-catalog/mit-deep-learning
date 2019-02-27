@@ -1,0 +1,16 @@
+Description: MIT Deep Learning
+Engine: gotpl
+Home: https://github.com/kuberlab-catalog/mit-deep-learning
+Icon: https://camo.githubusercontent.com/42d3d635cdb0e88dee786c6edc1f41e0902faa2b/68747470733a2f2f646565706c6561726e696e672e6d69742e6564752f66696c65732f696d616765732f6d69745f646565705f6c6561726e696e672e706e67
+Keywords:
+- tensorflow
+- deep learning
+- mit
+- notebook
+- jupyter
+Maintainers:
+- URL: https://lexfridman.com
+  Name: Lex Fridman
+Name: mit-deep-learning
+Version: 1.0.0
+Type: mlapp-v2
