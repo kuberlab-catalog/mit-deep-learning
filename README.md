@@ -18,7 +18,7 @@ Links: \[ [Jupyter Notebook](https://github.com/lexfridman/mit-deep-learning/blo
 
 ## Tutorial: Driving Scene Segmentation
 
-<a href="https://github.com/lexfridman/mit-deep-learning/blob/master/tutorial_driving_scene_segmentation/tutorial_driving_scene_segmentation.ipynb"><img src="images/thumb_driving_scene_segmentation.gif"></a>
+<a href="https://github.com/lexfridman/mit-deep-learning/blob/master/tutorial_driving_scene_segmentation/tutorial_driving_scene_segmentation.ipynb"><img src="https://github.com/lexfridman/mit-deep-learning/raw/master/images/thumb_driving_scene_segmentation.gif"></a>
 
 This tutorial demostrates semantic segmentation with a state-of-the-art model (DeepLab) on a sample video from the MIT Driving Scene Segmentation Dataset.
 
@@ -27,7 +27,7 @@ Links: \[ [Jupyter Notebook](https://github.com/lexfridman/mit-deep-learning/blo
 
 ## Tutorial: Generative Adversarial Networks (GANs)
 
-<a href="https://github.com/lexfridman/mit-deep-learning/blob/master/tutorial_gans/tutorial_gans.ipynb"><img src="images/thumb_mushroom_biggan.gif"></a>
+<a href="https://github.com/lexfridman/mit-deep-learning/blob/master/tutorial_gans/tutorial_gans.ipynb"><img src="https://github.com/lexfridman/mit-deep-learning/raw/master/images/thumb_mushroom_biggan.gif"></a>
 
 This tutorial explores generative adversarial networks (GANs) starting with BigGAN, the state-of-the-art conditional GAN.
 
@@ -36,7 +36,7 @@ Links: \[ [Jupyter Notebook](https://github.com/lexfridman/mit-deep-learning/blo
 
 ## DeepTraffic Deep Reinforcement Learning Competition
 
-<a href="https://selfdrivingcars.mit.edu/deeptraffic"><img src="images/thumb_deeptraffic.gif"></a>
+<a href="https://selfdrivingcars.mit.edu/deeptraffic"><img src="https://github.com/lexfridman/mit-deep-learning/raw/master/images/thumb_deeptraffic.gif"></a>
 
 DeepTraffic is a deep reinforcement learning competition. The goal is to create a neural network that drives a vehicle (or multiple vehicles) as fast as possible through dense highway traffic.
 
