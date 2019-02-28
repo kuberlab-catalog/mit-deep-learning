@@ -42,3 +42,4 @@ python_version:
 packages:
 - tabulate
 - tqdm
+- tensorflow_hub
